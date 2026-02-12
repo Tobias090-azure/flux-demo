@@ -22,7 +22,12 @@ spec:
       kubernetesGateway:
         enabled: true
     gateway:
-      enabled: false
+      enabled: true
+      name: traefik-gateway
+      listeners:
+        web:
+          port: 8080
+          protocol: HTTP
     service:
       type: LoadBalancer
       annotations:
