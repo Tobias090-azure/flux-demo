@@ -28,7 +28,7 @@ spec:
       listeners:
         web:
           namespacePolicy: All
-          port: 80
+          port: 8000
           protocol: HTTP
     service:
       type: LoadBalancer
