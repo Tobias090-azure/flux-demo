@@ -25,29 +25,11 @@ spec:
       name: traefik-gateway
       listeners:
         web:
-          port: 8080
+          port: 80
           protocol: HTTP
-        websecure:
-          port: 8443
-          protocol: HTTPS
-          certificateRefs:
-            - name: traefik-tls        # Refererar till TLS-cert
-              namespace: traefik
 
     # Azure LoadBalancer
     service:
       type: LoadBalancer
       annotations:
         service.beta.kubernetes.io/azure-dns-label-name: flux-demo
-
-    # Dashboard (bra för demo)
-    ingressRoute:
-      dashboard:
-        enabled: true
-
-    # Loggnivå för demo
-    logs:
-      general:
-        level: INFO
-      access:
-        enabled: true
