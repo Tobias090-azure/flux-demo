@@ -5,14 +5,18 @@ metadata:
   namespace: traefik
 spec:
   interval: 30m
+  install:
+    crds: Skip          # ← Skippa CRDs vid install
+  upgrade:
+    crds: Skip          # ← Skippa CRDs vid upgrade
   chart:
     spec:
       chart: traefik
       version: "34.*"
-      sourceRef:                    # ← Det här saknades
+      sourceRef:
         kind: HelmRepository
         name: traefik
-        namespace: traefik
+        namespace: flux-system
   values:
     providers:
       kubernetesGateway:
