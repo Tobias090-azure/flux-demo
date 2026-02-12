@@ -9,6 +9,10 @@ spec:
     spec:
       chart: traefik
       version: "34.*"
+      sourceRef:                    # ← Det här saknades
+        kind: HelmRepository
+        name: traefik
+        namespace: traefik
   values:
     providers:
       kubernetesGateway:
