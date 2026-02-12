@@ -10,22 +10,13 @@ spec:
   chart:
     spec:
       chart: traefik
-      version: "34.*"     # Senaste 34.x
-      sourceRef:
-        kind: HelmRepository
-        name: traefik
-        namespace: flux-system
+      version: "34.*"
   values:
-    # Aktivera Gateway API provider
     providers:
       kubernetesGateway:
         enabled: true
-
-    # Gateway som Traefik ska lyssna på
     gateway:
       enabled: false
-
-    # Azure LoadBalancer
     service:
       type: LoadBalancer
       annotations:
