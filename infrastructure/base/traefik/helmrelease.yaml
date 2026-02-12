@@ -3,8 +3,6 @@ kind: HelmRelease
 metadata:
   name: traefik
   namespace: traefik
-  annotations:
-    clusterconfig.azure.com/use-managed-source: "true"
 spec:
   interval: 30m
   chart:
