@@ -18,9 +18,6 @@ spec:
         name: traefik
         namespace: traefik
   values:
-    entryPoints:
-      web:
-        address: ":80"
     providers:
       kubernetesGateway:
         enabled: true
@@ -30,7 +27,8 @@ spec:
       name: traefik-gateway
       listeners:
         web:
-          port: 8080
+          namespacePolicy: All
+          port: 80
           protocol: HTTP
     service:
       type: LoadBalancer
