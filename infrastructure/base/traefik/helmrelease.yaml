@@ -23,12 +23,7 @@ spec:
 
     # Gateway som Traefik ska lyssna på
     gateway:
-      enabled: true
-      name: traefik-gateway
-      listeners:
-        web:
-          port: 80
-          protocol: HTTP
+      enabled: false
 
     # Azure LoadBalancer
     service:
